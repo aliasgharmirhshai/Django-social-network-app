@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block contact %}
+<h1>Regsioter Form</h1>
+
+{% if form.errors %}
+    <p>Somthing Error</p>
+{% else %}
+    <p>Please Login Site</p>
+{% endif %}
+
+<form action="" method='post'>
+    {{form.as_p}}
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{next}}">
+    <input type="submit" value="Login">
+</form
+{% endblock contact %}
