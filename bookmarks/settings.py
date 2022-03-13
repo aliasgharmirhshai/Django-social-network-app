@@ -73,9 +73,9 @@ TEMPLATES = [
 WSGI_APPLICATION = 'bookmarks.wsgi.application'
 
 
-LOGIN_REDIRECT_URL = 'accounts:user_dashboard'
-LOGIN_URL = 'accounts:user_login'
-LOGOUT_URL = 'accounts:user_logout'
+LOGIN_REDIRECT_URL = 'user_dashboard'
+LOGIN_URL = 'user_login'
+LOGOUT_URL = 'user_logout'
 
 
 # Database
