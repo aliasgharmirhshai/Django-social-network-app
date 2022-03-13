@@ -5,6 +5,7 @@
 <h1>Dashboard</h1>
 <p>Hello {{request.user.username}}</p>
 
-<a href="">Logout</a>
+<a href="{% url 'user_logout' %}" class="btn btn-danger">Logout</a>
+<a href="{% url 'password_change' %}" class="btn btn-primary">Password Change</a>
 
 {% endblock contact %}
