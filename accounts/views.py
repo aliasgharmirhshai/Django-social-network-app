@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import LoginForm
+from .forms import LoginForm, RegisterForm
 from django.contrib.auth import login, authenticate
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
@@ -33,3 +33,23 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def dashboard(request):
     return render(request, 'accounts/dashboard.html', {})
+
+
+def register(request):
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+
+        if form.is_valid():
+            # Save Password in Database
+            if form.cleaned_data['password'] == form.cleaned_data['password2']:
+                new_user = form.save(commit=False)
+                new_user.set_password(
+                    form.cleaned_data['password']
+                )
+                new_user.save()
+
+                return render(request, 'accounts/register_done.html', {'new_user':new_user})
+    
+    else:
+        form = RegisterForm()
+    return render(request, 'accounts/register.html', {'form':form})

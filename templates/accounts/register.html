@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block contact %}
+<h1>Register Form</h1>
+
+<p>are you login?</p>
+<a href="{% url 'user_login' %}" class="btn btn-primary">Login</a>
+<hr>
+
+<form action="" method='post'>
+    {{form.as_p}}
+    {% csrf_token %}
+    <input type="submit" value="Register" class="btn btn-primary">
+</form>
+
+{% endblock contact %}
