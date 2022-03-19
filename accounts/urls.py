@@ -18,4 +18,6 @@ urlpatterns = [
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
     # Register
     path('register/', views.register, name='user_register'),
+    # Edit
+    path('edit/', views.edit, name='user_edit'),
 ]
