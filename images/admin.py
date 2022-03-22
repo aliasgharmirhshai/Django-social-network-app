@@ -4,4 +4,5 @@ from .models import Image
 
 @admin.register(Image)
 class AdminImage(admin.ModelAdmin):
-    list_display = ['user', 'title',]    
+    list_display = ['user', 'title', 'slug', 'image', 'created',] 
+    list_filter = ['created',]   

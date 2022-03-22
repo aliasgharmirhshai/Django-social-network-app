@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block contact %}
+
+<h1>Create an Image</h1>
+<hr>
+<form action="" method="post">
+    {{form.as_p}}
+    {% csrf_token %}
+    <p>
+        <input type="submit" value="Save Change" class="btn btn-primary">
+    </p>
+</form>
+
+{% endblock contact %}

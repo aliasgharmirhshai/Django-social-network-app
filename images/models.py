@@ -11,6 +11,7 @@ class Image(models.Model):
     image = models.ImageField(upload_to="image/%Y/%m/%d")
     description = models.TextField(blank=True) 
     created = models.DateField(auto_now_add=True, db_index=True)
+    user_log = models.ManyToManyField(to=settings.AUTH_USER_MODEL, blank=True, related_name="images_liked")
 
     def __str__(self):
         return self.title
